@@ -63,18 +63,7 @@ function QualityTools() {
       <AddressNew loadInitData={loadInitData} handleTrigger={handleTrigger} setAnimationNow={setAnimationNow} handleScroll={handleScroll} />
 
       {/* 广告位 */}
-      <View className={styles.bannerBox}>
-        {!!bottomAd?.resourceId && (
-          <View className={styles.marketResource}>
-            {/* <MarketingResource
-          resourceId={bottomAd?.resourceId}
-          env={process.env.NODE_ENV}
-          httpClient={(url, data) => {
-            return http.post(url, data.data, { ignoreError: true })
-          }}></MarketingResource> */}
-          </View>
-        )}
-      </View>
+      <View className={styles.bannerBox}>{!!bottomAd?.resourceId && <View className={styles.marketResource}></View>}</View>
     </ScrollView>
   )
 }
