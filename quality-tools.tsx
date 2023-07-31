@@ -19,23 +19,20 @@ function QualityTools() {
     resourceId: '',
   })
   const [animation, setAnimationNow] = useState(0)
-
   const handleSelectCargoTypeTrigger = second => {
-    console.log(`🚀 ~ QualityTools ~ second:`, second)
+    console.log(second)
   }
 
   const handleScroll = second => {
-    console.log(`🚀 ~ QualityTools ~ second:`, second)
+    console.log(second)
   }
 
   const loadInitData = second => {
-    console.log(`🚀 ~ QualityTools ~ second:`, second)
+    console.log(second)
   }
-
   const handleTrigger = second => {
-    console.log(`🚀 ~ QualityTools ~ second:`, second)
+    console.log(second)
   }
-
   return (
     <div>
       {tabIndex === TITLE_SWITCH_VALUE.specailLine ? (
@@ -61,22 +58,10 @@ function QualityTools() {
           <AddressNew loadInitData={loadInitData} handleTrigger={handleTrigger} setAnimationNow={setAnimationNow} handleScroll={handleScroll} />
 
           {/* 广告位 */}
-          <View className={styles.bannerBox}>
-            {!!bottomAd?.resourceId && (
-              <View className={styles.marketResource}>
-                {/* <MarketingResource
-          resourceId={bottomAd?.resourceId}
-          env={process.env.NODE_ENV}
-          httpClient={(url, data) => {
-            return http.post(url, data.data, { ignoreError: true })
-          }}></MarketingResource> */}
-              </View>
-            )}
-          </View>
+          <View className={styles.bannerBox}>{!!bottomAd?.resourceId && <View className={styles.marketResource}>ad Area</View>}</View>
         </ScrollView>
       )}
     </div>
   )
 }
-
 export default QualityTools
